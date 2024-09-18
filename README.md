@@ -1,6 +1,5 @@
 Got it! Here's the `README.md` in English for transferring the project to another account:
 
-````md
 # Filmreach Project
 
 This project utilizes Node.js, Nginx, Docker, Redis, and PM2 to run the server application.
@@ -14,7 +13,6 @@ sudo yum update
 sudo yum install git
 git version
 ```
-````
 
 ### 2. Install Node.js via NVM
 
