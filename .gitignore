@@ -1,0 +1,22 @@
+# Node.js
+node_modules/
+backups/
+tests/
+node_modules/
+npm-debug.log
+yarn.lock
+.env
+dist/
+coverage/
+
+# Docker
+docker-compose.override.yml
+*.log
+
+# IDE
+.idea/
+.vscode/
+.DS_Store
+
+# MacOS
+.DS_Store
