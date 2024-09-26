@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Upload File to BunnyCDN</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #f4f4f9;
+                margin: 0;
+                padding: 0;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 100vh;
+            }
+
+            .form-section {
+                min-width: 440px;
+            }
+
+            h1 {
+                color: #333;
+                text-align: center;
+            }
+
+            form {
+                background: #fff;
+                padding: 20px;
+                border-radius: 8px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                max-width: 400px;
+                width: 100%;
+            }
+
+            label {
+                display: block;
+                margin-bottom: 8px;
+                font-weight: bold;
+                color: #555;
+            }
+
+            input[type="file"],
+            input[type="text"],
+            button {
+                width: calc(100% - 20px);
+                padding: 10px;
+                margin-bottom: 20px;
+                border: 1px solid #ddd;
+                border-radius: 4px;
+                box-sizing: border-box;
+            }
+
+            button {
+                background-color: #9e61ff;
+                color: #fff;
+                border: none;
+                cursor: pointer;
+                font-size: 16px;
+                font-weight: bold;
+                transition: background-color 0.3s ease;
+            }
+
+            button:hover {
+                background-color: #218838;
+            }
+
+            #progressContainer {
+                width: 100%;
+                background-color: #ddd;
+                border-radius: 4px;
+                overflow: hidden;
+                margin-bottom: 20px;
+                position: relative;
+                height: 20px;
+            }
+
+            #progressBar {
+                height: 100%;
+                background: linear-gradient(248.28deg, #9e61ff 9.539999999999999%, rgba(142, 97, 255, 0) 32.8%), radial-gradient(81.70999999999999% 279.87% at -16.57% -92%, #619bff 28.69%, rgba(205, 219, 248, 0) 69.54000000000001%), #6c52ee;
+                width: 0;
+                transition: width 0.4s ease;
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+
+            #upload_success_video {
+                color: #9e61ff;
+                font-size: 18px;
+                font-weight: bold;
+                text-align: center;
+                display: none;
+                margin-bottom: 20px;
+            }
+
+            p {
+                font-size: 16px;
+                color: #333;
+                margin-bottom: 20px;
+                text-align: center;
+            }
+
+            #upload_url_video {
+                width: calc(100% - 20px);
+                padding: 10px;
+                border: 1px solid #ddd;
+                border-radius: 4px;
+                background-color: #f9f9f9;
+                color: #666;
+                text-align: center;
+            }
+
+            #status {
+                font-size: 16px;
+                color: #ff0000;
+                text-align: center;
+            }
+
+            .hidden {
+                display: none;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="form-section">
+            <h1>Upload File to BunnyCDN</h1>
+
+            <form id="uploadForm" enctype="multipart/form-data">
+                <label for="file">Choose file:</label>
+                <input type="file" id="videos_file" name="file" required />
+                <br /><br />
+                <label for="user-id">User ID:</label>
+                <input type="text" id="user-id" name="user-id" required />
+                <br /><br />
+                <button type="submit">Upload</button>
+            </form>
+
+            <div id="progressContainer" class="hidden">
+                <div id="progressBar"></div>
+            </div>
+
+            <div id="upload_success_video">✔ Video Uploaded!</div>
+
+            <p>Uploaded file: <span id="video_file_name"></span></p>
+
+            <input type="text" id="upload_url_video" readonly placeholder="URL uploaded video" />
+
+            <p id="status"></p>
+        </div>
+
+        <script src="/main.js"></script>
+    </body>
+</html>
